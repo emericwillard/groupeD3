@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Groupe_D3">
+    <meta name="description" content="Une première page web">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="Groupe_D3.css">
+    <title>Projet P2</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="Groupe_D3.css")}}">
+</head>
+<body>
+<div>
+    <header>
+        <h1>Le covid-19</h1>
+    </header>
+</div>
+<div id="carte">
+<br>
+<div id="blink">
+    <h3 style="color:black" > Rester chez vous, sauvez des vies ! </h3>
+</div>
+<p>Pour plus d'info, cliquez sur ce lien : <a class="lien" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"> Info sur le Covid-19</a>
+</p>
+<a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+    <img class="coro" src="https://krebsonsecurity.com/wp-content/uploads/2020/03/cv-map.png" alt="Coronavirus map" width="950" height="460">
+</a>
+<h2> Les 3 pays les plus touchés:</h2>
+<ol type="I">
+    <li>1. Chine : 81000 contaminés</li>
+    <li>2. Italie : 51000 contaminés</li>
+    <li>3. Espagne : 25000 contaminés</li>
+</ol>
+<div id="graph">
+    <canvas id="myChart" height="215px"></canvas>
+</div>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["2020-01-21", "2020-01-22", "2020-01-23", "2020-01-24", "2020-01-25", "2020-01-26", "2020-01-27", "2020-01-28", "2020-01-29", "2020-01-30", "2020-01-31", "2020-02-01",
+                "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14",
+                "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27",
+                "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11",
+                "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17"],
+            datasets: [{
+                label:"contaminés",
+                data: [282, 314, 581, 846, 1320, 2014, 2798, 4593, 6065, 7818, 9826, 11953, 14557, 17391, 20630, 24544, 28276, 31481, 34886, 37558, 40554,
+                    43103, 45171, 46997, 49053, 50580, 51857, 71429, 73332, 75204, 75748, 76769, 77794, 78811, 79331, 80239,
+                    81109, 82294, 83652, 85403, 87137, 88948, 90869, 93090, 95324, 98192, 101927, 105592, 109577, 113702, 118319, 125260, 132758, 142534, 153517, 167506, 179112],
+                backgroundColor: [
+                    'rgba(255, 1, 1, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(1, 1, 255, 0.5)'
+                ],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+    <br>
+</div>
+<div>
+    <footer>
+        <br>
+        <p>Emeric Willard & Nicolas Huberty<a class="fb1" href="https://www.facebook.com/emericwillard19"></a></p>
+        <br>
+    </footer>
+</div>
+</body>
+</html>
